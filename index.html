@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School and Classroom Support Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-panel shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center font-bold text-xl text-blue-700">
+                    <i class="fas fa-graduation-cap mr-2"></i> SCST
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition">About</a>
+                    <a href="#approach" class="text-gray-600 hover:text-blue-600 transition">Our Approach</a>
+                    <a href="#levels" class="text-gray-600 hover:text-blue-600 transition">Levels of Support</a>
+                    <a href="#team" class="text-gray-600 hover:text-blue-600 transition">Team Directory</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50"></div>
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-200 opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-purple-200 opacity-50 blur-3xl"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+                School and Classroom <br class="hidden md:block" />
+                <span class="gradient-text">Support Team</span>
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl text-gray-600 font-light max-w-3xl mx-auto">
+                Supporting Every School. Strengthening Every Classroom. Ensuring Every Student Thrives.
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#team" class="px-8 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                    Find a Team Member
+                </a>
+                <a href="#about" class="px-8 py-3 rounded-full bg-white text-blue-600 font-medium hover:bg-gray-50 shadow-md transition">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Who We Are</h2>
+                    <p class="text-lg text-gray-600 mb-4">
+                        The School and Classroom Support Team (SCST) partners with schools across the Louis Riel School Division to strengthen student learning, well-being, and belonging.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        SCST is a coordinated, system-level team that integrates leadership, instructional support, clinical services, Indigenous education, and specialized supports into one aligned model.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <p class="ml-3 text-gray-700"><strong>Equity and reconciliation</strong></p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <p class="ml-3 text-gray-700"><strong>Evidence-informed practice</strong></p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mt-1">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <p class="ml-3 text-gray-700"><strong>Strong, relational partnerships</strong> with school teams and communities</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-8 shadow-inner border border-gray-100">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Why This Work Matters</h3>
+                    <p class="text-gray-600 mb-4">Divisional data highlights persistent achievement gaps, disproportionate impacts on Indigenous students, and students with multiple risk indicators. This data informs how SCST prioritizes support:</p>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-2 mb-6">
+                        <li>Schools with the greatest need receive more intensive support.</li>
+                        <li>Supports are constantly monitored and adjusted based on impact.</li>
+                    </ul>
+                    <p class="text-gray-600 font-medium">Advancing the LRSD Multi-Year Strategic Plan by:</p>
+                    <div class="mt-4 grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm text-center text-sm font-medium text-blue-800">Closing opportunity gaps</div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm text-center text-sm font-medium text-blue-800">Responsive instruction</div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm text-center text-sm font-medium text-blue-800">Belonging & well-being</div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm text-center text-sm font-medium text-blue-800">Indigenous education</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Levels of Support -->
+    <section id="levels" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Levels of Support</h2>
+                <p class="text-lg text-gray-600">SCST uses a tiered model to differentiate levels of support across schools. This model allows for targeted allocation of time, expertise, and resources.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tier 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-green-400 fade-in transition hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Universal (Tier 1)</h3>
+                    <p class="text-gray-500 mb-6 text-sm">All schools receive universal support focused on building strong, inclusive learning environments.</p>
+                    <ul class="space-y-3 text-gray-600 text-sm">
+                        <li><i class="fas fa-angle-right text-green-500 mr-2"></i> Divisional frameworks and tools</li>
+                        <li><i class="fas fa-angle-right text-green-500 mr-2"></i> Professional learning</li>
+                        <li><i class="fas fa-angle-right text-green-500 mr-2"></i> Mentorship and capacity building</li>
+                        <li><i class="fas fa-angle-right text-green-500 mr-2"></i> Consultation upon request</li>
+                    </ul>
+                </div>
+                <!-- Tier 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-yellow-400 fade-in transition hover:-translate-y-2" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Targeted (Tier 2)</h3>
+                    <p class="text-gray-500 mb-6 text-sm">Targeted, short- to medium-term support focused on specific areas of need identified through data.</p>
+                    <ul class="space-y-3 text-gray-600 text-sm">
+                        <li><i class="fas fa-angle-right text-yellow-500 mr-2"></i> Coaching and co-planning</li>
+                        <li><i class="fas fa-angle-right text-yellow-500 mr-2"></i> Data analysis and intervention</li>
+                        <li><i class="fas fa-angle-right text-yellow-500 mr-2"></i> Joint problem-solving</li>
+                        <li><i class="fas fa-angle-right text-yellow-500 mr-2"></i> Support for identified groups</li>
+                    </ul>
+                </div>
+                <!-- Tier 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-red-400 fade-in transition hover:-translate-y-2" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Intensive (Tier 3)</h3>
+                    <p class="text-gray-500 mb-6 text-sm">Highest level of involvement. Support is frequent, collaborative, and responsive to complex needs.</p>
+                    <ul class="space-y-3 text-gray-600 text-sm">
+                        <li><i class="fas fa-angle-right text-red-500 mr-2"></i> Embedded, in-school support</li>
+                        <li><i class="fas fa-angle-right text-red-500 mr-2"></i> Ongoing collaboration with leadership</li>
+                        <li><i class="fas fa-angle-right text-red-500 mr-2"></i> Coordinated multidisciplinary teams</li>
+                        <li><i class="fas fa-angle-right text-red-500 mr-2"></i> Intensive data analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Directory -->
+    <section id="team" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Team Directory</h2>
+                <p class="text-lg text-gray-600">Search for team members by name, role, or area of support.</p>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="max-w-4xl mx-auto mb-12 fade-in">
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <i class="fas fa-search text-gray-400"></i>
+                    </div>
+                    <input type="text" id="searchInput" class="block w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-lg outline-none" placeholder="Search team members...">
+                </div>
+                <div class="mt-6 flex flex-wrap gap-2 justify-center" id="filterButtons">
+                    <!-- Buttons generated by JS -->
+                </div>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="teamGrid">
+                <!-- Cards generated by JS -->
+            </div>
+            
+            <!-- No results message -->
+            <div id="noResults" class="hidden text-center py-12 text-gray-500">
+                <i class="fas fa-search-minus text-4xl mb-4"></i>
+                <p class="text-xl">No team members found matching your search.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center items-center font-bold text-2xl mb-4">
+                <i class="fas fa-graduation-cap mr-3"></i> SCST
+            </div>
+            <p class="text-gray-400">School and Classroom Support Team • Louis Riel School Division</p>
+            <p class="text-gray-500 text-sm mt-8">&copy; 2026 LRSD. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- App Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
