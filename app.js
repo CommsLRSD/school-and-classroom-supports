@@ -367,6 +367,9 @@ function renderTeam() {
             const card = document.createElement('div');
             card.className = 'team-card';
             card.innerHTML = `
+                <img src="https://media.lrsd.net/media/Default/frl/istock-2212478698.25758188888.jpg"
+                     alt="Placeholder headshot"
+                     class="team-photo">
                 <span class="team-dept">${escHtml(member.department)}</span>
                 <h4>${escHtml(member.name)}</h4>
                 <p class="team-role">${escHtml(member.role)}</p>
