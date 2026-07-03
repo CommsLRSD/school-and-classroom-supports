@@ -1,228 +1,736 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School and Classroom Support Team</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .gradient-text {
-            background: linear-gradient(to right, #2563eb, #7c3aed);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+    <title>School and Classroom Support Team — LRSD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 glass-panel shadow-sm transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex-shrink-0 flex items-center font-bold text-xl text-blue-700">
-                    <i class="fas fa-graduation-cap mr-2"></i> SCST
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition">About</a>
-                    <a href="#approach" class="text-gray-600 hover:text-blue-600 transition">Our Approach</a>
-                    <a href="#levels" class="text-gray-600 hover:text-blue-600 transition">Levels of Support</a>
-                    <a href="#team" class="text-gray-600 hover:text-blue-600 transition">Team Directory</a>
-                </div>
+<body>
+
+    <!-- ── Site Header ──────────────────────────── -->
+    <header class="site-header" role="banner">
+        <div class="header-inner">
+            <div class="site-logo">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <span class="logo-abbr">SCST</span>
+                <span class="logo-divider" aria-hidden="true"></span>
+                <span class="logo-full">School &amp; Classroom Support Team</span>
             </div>
+            <div class="header-toolbar">
+                <span class="header-division">Louis Riel School Division</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Section Navigation ───────────────────── -->
+    <nav class="section-nav" aria-label="Page sections">
+        <div class="section-nav-inner">
+
+            <button class="nav-arrow" id="prevBtn"
+                    aria-label="Previous section"
+                    aria-controls="mainContent"
+                    disabled>
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+
+            <div class="section-tabs" role="tablist" aria-label="Content sections">
+                <button class="section-tab active"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="sec-about"
+                        id="tab-0"
+                        data-index="0">
+                    Who We Are
+                </button>
+                <button class="section-tab"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="sec-approach"
+                        id="tab-1"
+                        data-index="1">
+                    Our Approach
+                </button>
+                <button class="section-tab"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="sec-team"
+                        id="tab-2"
+                        data-index="2">
+                    Our Team
+                </button>
+                <button class="section-tab"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="sec-model"
+                        id="tab-3"
+                        data-index="3">
+                    Support Model
+                </button>
+                <button class="section-tab"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="sec-ahead"
+                        id="tab-4"
+                        data-index="4">
+                    Looking Ahead
+                </button>
+            </div>
+
+            <button class="nav-arrow" id="nextBtn"
+                    aria-label="Next section"
+                    aria-controls="mainContent">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
+
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50"></div>
-            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-200 opacity-50 blur-3xl"></div>
-            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-purple-200 opacity-50 blur-3xl"></div>
-        </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-                School and Classroom <br class="hidden md:block" />
-                <span class="gradient-text">Support Team</span>
-            </h1>
-            <p class="mt-4 text-xl md:text-2xl text-gray-600 font-light max-w-3xl mx-auto">
-                Supporting Every School. Strengthening Every Classroom. Ensuring Every Student Thrives.
-            </p>
-            <div class="mt-10 flex justify-center gap-4">
-                <a href="#team" class="px-8 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-                    Find a Team Member
-                </a>
-                <a href="#about" class="px-8 py-3 rounded-full bg-white text-blue-600 font-medium hover:bg-gray-50 shadow-md transition">
-                    Learn More
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- ── Main Content ─────────────────────────── -->
+    <main id="mainContent" class="main-content">
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in">
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Who We Are</h2>
-                    <p class="text-lg text-gray-600 mb-4">
-                        The School and Classroom Support Team (SCST) partners with schools across the Louis Riel School Division to strengthen student learning, well-being, and belonging.
-                    </p>
-                    <p class="text-lg text-gray-600 mb-6">
-                        SCST is a coordinated, system-level team that integrates leadership, instructional support, clinical services, Indigenous education, and specialized supports into one aligned model.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mt-1">
-                                <i class="fas fa-check text-sm"></i>
-                            </div>
-                            <p class="ml-3 text-gray-700"><strong>Equity and reconciliation</strong></p>
+        <!-- ════════════════════════════════════════
+             SECTION 1 — Who We Are
+             ════════════════════════════════════════ -->
+        <section class="section-panel"
+                 id="sec-about"
+                 role="tabpanel"
+                 aria-labelledby="tab-0"
+                 tabindex="-1">
+            <div class="content-body">
+
+                <div class="section-intro">
+                    <h2>Who We Are</h2>
+                    <p>A coordinated, system-level team partnering with schools to strengthen student learning, well-being, and belonging.</p>
+                </div>
+
+                <div class="card-grid">
+
+                    <!-- Intro — full-width -->
+                    <div class="data-card tile-full-width">
+                        <div class="card-header">
+                            <i class="fas fa-graduation-cap card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">School &amp; Classroom Support Team</span>
                         </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mt-1">
-                                <i class="fas fa-check text-sm"></i>
-                            </div>
-                            <p class="ml-3 text-gray-700"><strong>Evidence-informed practice</strong></p>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mt-1">
-                                <i class="fas fa-check text-sm"></i>
-                            </div>
-                            <p class="ml-3 text-gray-700"><strong>Strong, relational partnerships</strong> with school teams and communities</p>
+                        <div class="card-body">
+                            <p>The School and Classroom Support Team (SCST) partners with schools across the Louis Riel School Division to strengthen student learning, well-being, and belonging.</p>
+                            <p style="margin-top:.75rem">SCST is a coordinated, system-level team that integrates leadership, instructional support, clinical services, Indigenous education, and specialized supports into one aligned model.</p>
+                            <p style="margin-top:.75rem"><em>Supporting Every School. Strengthening Every Classroom. Ensuring Every Student Thrives.</em></p>
                         </div>
                     </div>
+
+                    <!-- Values -->
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-heart card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">Our Work Is Grounded In</span>
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-list">
+                                <li>
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <span><strong>Equity and reconciliation</strong></span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <span><strong>Evidence-informed practice</strong></span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <span><strong>Strong, relational partnerships</strong> with school teams and communities</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- How we work -->
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-handshake card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">We Work Alongside Schools To</span>
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-list">
+                                <li>
+                                    <i class="fas fa-angle-right" aria-hidden="true"></i>
+                                    <span>Build instructional and system capacity</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-angle-right" aria-hidden="true"></i>
+                                    <span>Respond to identified student and school needs</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-angle-right" aria-hidden="true"></i>
+                                    <span>Close opportunity gaps — particularly for Indigenous students and learners experiencing barriers</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Why it matters -->
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-chart-bar card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">Why This Work Matters</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Divisional data — literacy and numeracy screening, progress monitoring, attendance, and well-being indicators — continues to highlight:</p>
+                            <ul class="card-list" style="margin-top:.75rem">
+                                <li>
+                                    <i class="fas fa-exclamation-circle" style="color:var(--c-tier3)" aria-hidden="true"></i>
+                                    <span>Persistent achievement gaps across schools</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-exclamation-circle" style="color:var(--c-tier3)" aria-hidden="true"></i>
+                                    <span>Disproportionate impact on Indigenous students</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-exclamation-circle" style="color:var(--c-tier3)" aria-hidden="true"></i>
+                                    <span>Students with multiple indicators of risk</span>
+                                </li>
+                            </ul>
+                            <p style="margin-top:.75rem">Schools with the greatest need receive the most intensive, coordinated support — and supports are continuously monitored for impact.</p>
+                        </div>
+                    </div>
+
+                    <!-- Strategic priorities — full-width -->
+                    <div class="data-card tile-full-width">
+                        <div class="card-header">
+                            <i class="fas fa-star card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">Advancing the LRSD Multi-Year Strategic Plan</span>
+                        </div>
+                        <div class="card-body">
+                            <p style="margin-bottom:.75rem">This work directly advances the LRSD Multi-Year Strategic Plan through:</p>
+                            <div class="pill-row">
+                                <span class="pill">Closing opportunity gaps</span>
+                                <span class="pill">Strengthening responsive instruction</span>
+                                <span class="pill">Supporting belonging and well-being</span>
+                                <span class="pill">Embedding Indigenous education and reconciliation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /.card-grid -->
+            </div><!-- /.content-body -->
+        </section>
+
+
+        <!-- ════════════════════════════════════════
+             SECTION 2 — Our Approach
+             ════════════════════════════════════════ -->
+        <section class="section-panel"
+                 id="sec-approach"
+                 role="tabpanel"
+                 aria-labelledby="tab-1"
+                 tabindex="-1"
+                 hidden>
+            <div class="content-body">
+
+                <div class="section-intro">
+                    <h2>Our Approach</h2>
+                    <p>Differentiated, data-informed support to strengthen every school community.</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-8 shadow-inner border border-gray-100">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Why This Work Matters</h3>
-                    <p class="text-gray-600 mb-4">Divisional data highlights persistent achievement gaps, disproportionate impacts on Indigenous students, and students with multiple risk indicators. This data informs how SCST prioritizes support:</p>
-                    <ul class="list-disc pl-5 text-gray-600 space-y-2 mb-6">
-                        <li>Schools with the greatest need receive more intensive support.</li>
-                        <li>Supports are constantly monitored and adjusted based on impact.</li>
-                    </ul>
-                    <p class="text-gray-600 font-medium">Advancing the LRSD Multi-Year Strategic Plan by:</p>
-                    <div class="mt-4 grid grid-cols-2 gap-4">
-                        <div class="bg-white p-4 rounded-lg shadow-sm text-center text-sm font-medium text-blue-800">Closing opportunity gaps</div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm text-center text-sm font-medium text-blue-800">Responsive instruction</div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm text-center text-sm font-medium text-blue-800">Belonging & well-being</div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm text-center text-sm font-medium text-blue-800">Indigenous education</div>
+
+                <div class="card-grid">
+
+                    <!-- Overview — double-width -->
+                    <div class="data-card tile-double-width">
+                        <div class="card-header">
+                            <i class="fas fa-project-diagram card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">Differentiated, Data-Informed Support</span>
+                        </div>
+                        <div class="card-body">
+                            <p>SCST collaborates with schools to:</p>
+                            <ul class="card-list" style="margin-top:.75rem">
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Analyze data</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Strengthen instructional practice</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Support professional learning</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Mentor staff</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Build inclusive and culturally responsive environments</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tier 1 -->
+                    <div class="data-card tier-1">
+                        <div class="card-header">
+                            <i class="fas fa-users card-header-icon" style="color:var(--c-tier1)" aria-hidden="true"></i>
+                            <span class="card-title">Tier 1 — Universal Support</span>
+                            <span class="card-badge badge-tier-1">All Schools</span>
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-list">
+                                <li><i class="fas fa-arrow-right" style="color:var(--c-tier1)" aria-hidden="true"></i><span>Divisional frameworks and tools</span></li>
+                                <li><i class="fas fa-arrow-right" style="color:var(--c-tier1)" aria-hidden="true"></i><span>Professional learning</span></li>
+                                <li><i class="fas fa-arrow-right" style="color:var(--c-tier1)" aria-hidden="true"></i><span>Mentorship and capacity building</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="data-card tier-2">
+                        <div class="card-header">
+                            <i class="fas fa-user-friends card-header-icon" style="color:var(--c-tier2)" aria-hidden="true"></i>
+                            <span class="card-title">Tier 2 — Targeted Support</span>
+                            <span class="card-badge badge-tier-2">Selected Schools</span>
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-list">
+                                <li><i class="fas fa-arrow-right" style="color:var(--c-tier2)" aria-hidden="true"></i><span>Coaching and co-planning</span></li>
+                                <li><i class="fas fa-arrow-right" style="color:var(--c-tier2)" aria-hidden="true"></i><span>Data analysis and intervention planning</span></li>
+                                <li><i class="fas fa-arrow-right" style="color:var(--c-tier2)" aria-hidden="true"></i><span>Support for identified groups of students and educators</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="data-card tier-3">
+                        <div class="card-header">
+                            <i class="fas fa-user card-header-icon" style="color:var(--c-tier3)" aria-hidden="true"></i>
+                            <span class="card-title">Tier 3 — Intensive Support</span>
+                            <span class="card-badge badge-tier-3">Priority Schools</span>
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-list">
+                                <li><i class="fas fa-arrow-right" style="color:var(--c-tier3)" aria-hidden="true"></i><span>Embedded, in-school support</span></li>
+                                <li><i class="fas fa-arrow-right" style="color:var(--c-tier3)" aria-hidden="true"></i><span>Ongoing collaboration with school leadership and teams</span></li>
+                                <li><i class="fas fa-arrow-right" style="color:var(--c-tier3)" aria-hidden="true"></i><span>Coordinated instructional, clinical, and Indigenous education supports</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Using Data to Guide Our Work -->
+                    <div class="data-card tile-double-width">
+                        <div class="card-header">
+                            <i class="fas fa-database card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">Using Data to Guide Our Work</span>
+                        </div>
+                        <div class="card-body card-split">
+                            <div>
+                                <p style="margin-bottom:.6rem;font-weight:600;color:var(--c-text-heading)">SCST uses a range of divisional data sources to identify need and monitor impact:</p>
+                                <ul class="card-list">
+                                    <li><i class="fas fa-chart-bar" aria-hidden="true"></i><span>Literacy and numeracy screening</span></li>
+                                    <li><i class="fas fa-chart-bar" aria-hidden="true"></i><span>Progress monitoring data</span></li>
+                                    <li><i class="fas fa-chart-bar" aria-hidden="true"></i><span>Attendance and well-being indicators</span></li>
+                                    <li><i class="fas fa-chart-bar" aria-hidden="true"></i><span>Indigenous student gap indicators</span></li>
+                                    <li><i class="fas fa-chart-bar" aria-hidden="true"></i><span>Classroom and school context</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p style="margin-bottom:.6rem;font-weight:600;color:var(--c-text-heading)">This ensures:</p>
+                                <ul class="card-list">
+                                    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Early identification of students requiring support</span></li>
+                                    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Targeted and responsive intervention</span></li>
+                                    <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Ongoing monitoring and adjustment</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /.card-grid -->
+            </div><!-- /.content-body -->
+        </section>
+
+
+        <!-- ════════════════════════════════════════
+             SECTION 3 — Our Team
+             ════════════════════════════════════════ -->
+        <section class="section-panel"
+                 id="sec-team"
+                 role="tabpanel"
+                 aria-labelledby="tab-2"
+                 tabindex="-1"
+                 hidden>
+            <div class="content-body">
+
+                <div class="section-intro">
+                    <h2>Our Team</h2>
+                    <p>SCST is organized into six integrated areas of support — 34 dedicated professionals serving schools across LRSD.</p>
+                </div>
+
+                <!-- Six Area Overview Cards -->
+                <div class="card-grid">
+
+                    <!-- Leadership -->
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-sitemap card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">1. Leadership</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Leadership ensures system coherence, alignment to the Multi-Year Strategic Plan, and coordinated support across all SCST areas.</p>
+                            <ul class="card-list" style="margin-top:.75rem">
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Align supports to divisional priorities and data</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Coordinate cross-team collaboration</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Respond to emerging school needs</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Ensure equity-driven decision-making</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Instructional Support -->
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-book-open card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">2. Instructional Support (Literacy &amp; Numeracy)</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Instructional support strengthens classroom practice, improves student achievement, and builds teacher capacity.</p>
+                            <ul class="card-list" style="margin-top:.75rem">
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Early screening and progress monitoring</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Structured literacy and numeracy practices</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Intervention planning</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Co-planning and co-teaching</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Instructional coaching and mentorship</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Data-informed instructional decision-making</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Student Support Services -->
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-hands-helping card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">3. Student Support Services</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Student Support Services creates inclusive, responsive environments that address academic, behavioural, and social-emotional needs.</p>
+                            <ul class="card-list" style="margin-top:.75rem">
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>MEECL, RAF, and TCIS frameworks</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Mentor support for new teachers</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Transitions planning</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Student-centered data use</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Support for multilingual learners</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Indigenous Education -->
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-feather-alt card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">4. Indigenous Education</span>
+                        </div>
+                        <div class="card-body">
+                            <p>The Indigenous Education Team partners with schools to advance Indigenous student success through culture, identity, and relationship.</p>
+                            <ul class="card-list" style="margin-top:.75rem">
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Indigenous Education School-Based Action Plans (IESAP)</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Data analysis and goal setting</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Cultural teachings and land-based learning</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Language programming</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Connection to Elders and Knowledge Keepers</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Clinical Services -->
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-heartbeat card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">5. Clinical Services</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Clinical Services supports communication, regulation, and well-being through interdisciplinary collaboration.</p>
+                            <ul class="card-list" style="margin-top:.75rem">
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Occupational Therapy</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Psychology</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Speech Language Pathology</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Social Work</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Social-emotional and regulation support</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Transition planning</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Professional learning for staff</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Specialized Supports -->
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-star card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">6. Specialized Supports</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Specialized supports enhance school programming, engagement, and discipline-specific instruction.</p>
+                            <ul class="card-list" style="margin-top:.75rem">
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Library Services</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Physical Education &amp; Healthy Living</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Extra-Curricular Athletics</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>LRSD Arts (Music, Visual Arts, Drama)</span></li>
+                                <li><i class="fas fa-angle-right" aria-hidden="true"></i><span>Applied Technology and Human Ecology</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div><!-- /.card-grid (area overview) -->
+
+                <h3 class="team-section-heading">Meet the Team</h3>
+
+                <!-- Search & Filter -->
+                <div class="team-controls">
+                    <div class="search-wrap">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input type="text"
+                               id="searchInput"
+                               placeholder="Search by name, role, or area…"
+                               aria-label="Search team members"
+                               autocomplete="off">
+                    </div>
+                    <div class="filter-wrap"
+                         id="filterButtons"
+                         role="group"
+                         aria-label="Filter by department">
+                        <!-- Generated by JS -->
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Levels of Support -->
-    <section id="levels" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Levels of Support</h2>
-                <p class="text-lg text-gray-600">SCST uses a tiered model to differentiate levels of support across schools. This model allows for targeted allocation of time, expertise, and resources.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Tier 1 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-green-400 fade-in transition hover:-translate-y-2">
-                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-xl mb-6">
-                        <i class="fas fa-users"></i>
+                <!-- Team Grid -->
+                <div class="team-grid"
+                     id="teamGrid"
+                     aria-live="polite"
+                     aria-atomic="false">
+                    <!-- Generated by JS -->
+                </div>
+
+                <div id="noResults" class="no-results hidden" role="status">
+                    <i class="fas fa-search-minus" aria-hidden="true"></i>
+                    <p>No team members found matching your search.</p>
+                </div>
+
+            </div><!-- /.content-body -->
+        </section>
+
+
+        <!-- ════════════════════════════════════════
+             SECTION 4 — Support Model
+             ════════════════════════════════════════ -->
+        <section class="section-panel"
+                 id="sec-model"
+                 role="tabpanel"
+                 aria-labelledby="tab-3"
+                 tabindex="-1"
+                 hidden>
+            <div class="content-body">
+
+                <div class="section-intro">
+                    <h2>School-Based Support Model</h2>
+                    <p>Equity-focused, data-driven support tailored to each school's unique needs.</p>
+                </div>
+
+                <div class="card-grid">
+
+                    <!-- Overview — full-width -->
+                    <div class="data-card tile-full-width">
+                        <div class="card-header">
+                            <i class="fas fa-sitemap card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">Equity Support School Model</span>
+                        </div>
+                        <div class="card-body">
+                            <p>SCST provides supports based on a combination of divisional data, school-level context, and identified student and staff needs. This responsive approach ensures resources are aligned to where they will have the greatest impact, while building long-term capacity across all schools.</p>
+                            <p style="margin-top:.75rem">SCST works in partnership with school teams to analyze data (e.g., achievement, well-being, attendance, and engagement) and co-develop plans that are strengths-based, culturally responsive, and focused on improving outcomes for all learners.</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Universal (Tier 1)</h3>
-                    <p class="text-gray-500 mb-6 text-sm">All schools receive universal support focused on building strong, inclusive learning environments.</p>
-                    <ul class="space-y-3 text-gray-600 text-sm">
-                        <li><i class="fas fa-angle-right text-green-500 mr-2"></i> Divisional frameworks and tools</li>
-                        <li><i class="fas fa-angle-right text-green-500 mr-2"></i> Professional learning</li>
-                        <li><i class="fas fa-angle-right text-green-500 mr-2"></i> Mentorship and capacity building</li>
-                        <li><i class="fas fa-angle-right text-green-500 mr-2"></i> Consultation upon request</li>
-                    </ul>
-                </div>
-                <!-- Tier 2 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-yellow-400 fade-in transition hover:-translate-y-2" style="transition-delay: 100ms;">
-                    <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center text-xl mb-6">
-                        <i class="fas fa-bullseye"></i>
+
+                    <!-- Tier 3 Intensive -->
+                    <div class="data-card tier-3">
+                        <div class="card-header">
+                            <i class="fas fa-user card-header-icon" style="color:var(--c-tier3)" aria-hidden="true"></i>
+                            <span class="card-title">Tier 3 — Intensive Support</span>
+                            <span class="card-badge badge-tier-3">Priority Schools</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Schools identified for Tier 3 support receive the highest level of involvement from SCST. Support is frequent, collaborative, and responsive to complex or urgent needs.</p>
+                            <ul class="card-list" style="margin-top:.75rem">
+                                <li><i class="fas fa-check" style="color:var(--c-tier3)" aria-hidden="true"></i><span>Ongoing, embedded support from multidisciplinary team members</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier3)" aria-hidden="true"></i><span>Regular in-school presence to co-plan, co-teach, and model practices</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier3)" aria-hidden="true"></i><span>Intensive data analysis and progress monitoring</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier3)" aria-hidden="true"></i><span>Support with comprehensive school-based action planning</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier3)" aria-hidden="true"></i><span>Coordination with external agencies and specialized services</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier3)" aria-hidden="true"></i><span>Focused efforts to address significant gaps in student achievement, well-being, or engagement</span></li>
+                            </ul>
+                            <p class="card-goal"><strong>Goal:</strong> Stabilize systems, address immediate needs, and build sustainable structures for continued growth.</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Targeted (Tier 2)</h3>
-                    <p class="text-gray-500 mb-6 text-sm">Targeted, short- to medium-term support focused on specific areas of need identified through data.</p>
-                    <ul class="space-y-3 text-gray-600 text-sm">
-                        <li><i class="fas fa-angle-right text-yellow-500 mr-2"></i> Coaching and co-planning</li>
-                        <li><i class="fas fa-angle-right text-yellow-500 mr-2"></i> Data analysis and intervention</li>
-                        <li><i class="fas fa-angle-right text-yellow-500 mr-2"></i> Joint problem-solving</li>
-                        <li><i class="fas fa-angle-right text-yellow-500 mr-2"></i> Support for identified groups</li>
-                    </ul>
-                </div>
-                <!-- Tier 3 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-red-400 fade-in transition hover:-translate-y-2" style="transition-delay: 200ms;">
-                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center text-xl mb-6">
-                        <i class="fas fa-hands-helping"></i>
+
+                    <!-- Tier 2 Targeted -->
+                    <div class="data-card tier-2">
+                        <div class="card-header">
+                            <i class="fas fa-user-friends card-header-icon" style="color:var(--c-tier2)" aria-hidden="true"></i>
+                            <span class="card-title">Tier 2 — Targeted Support</span>
+                            <span class="card-badge badge-tier-2">Selected Schools</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Targeted, short- to medium-term support focused on specific areas of need identified through data and school context.</p>
+                            <ul class="card-list" style="margin-top:.75rem">
+                                <li><i class="fas fa-check" style="color:var(--c-tier2)" aria-hidden="true"></i><span>Planned coaching and collaborative inquiry cycles</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier2)" aria-hidden="true"></i><span>Support implementing evidence-informed strategies</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier2)" aria-hidden="true"></i><span>Joint problem-solving with school teams and leadership</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier2)" aria-hidden="true"></i><span>Professional learning tailored to identified priorities</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier2)" aria-hidden="true"></i><span>Check-ins to monitor progress and adjust supports</span></li>
+                            </ul>
+                            <p class="card-goal"><strong>Goal:</strong> Strengthen key practices, build staff confidence and skill, and address emerging needs before they intensify.</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Intensive (Tier 3)</h3>
-                    <p class="text-gray-500 mb-6 text-sm">Highest level of involvement. Support is frequent, collaborative, and responsive to complex needs.</p>
-                    <ul class="space-y-3 text-gray-600 text-sm">
-                        <li><i class="fas fa-angle-right text-red-500 mr-2"></i> Embedded, in-school support</li>
-                        <li><i class="fas fa-angle-right text-red-500 mr-2"></i> Ongoing collaboration with leadership</li>
-                        <li><i class="fas fa-angle-right text-red-500 mr-2"></i> Coordinated multidisciplinary teams</li>
-                        <li><i class="fas fa-angle-right text-red-500 mr-2"></i> Intensive data analysis</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Team Directory -->
-    <section id="team" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12 fade-in">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Team Directory</h2>
-                <p class="text-lg text-gray-600">Search for team members by name, role, or area of support.</p>
-            </div>
-
-            <!-- Search and Filter -->
-            <div class="max-w-4xl mx-auto mb-12 fade-in">
-                <div class="relative">
-                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <i class="fas fa-search text-gray-400"></i>
+                    <!-- Tier 1 Universal -->
+                    <div class="data-card tier-1">
+                        <div class="card-header">
+                            <i class="fas fa-users card-header-icon" style="color:var(--c-tier1)" aria-hidden="true"></i>
+                            <span class="card-title">Tier 1 — Universal Support</span>
+                            <span class="card-badge badge-tier-1">All Schools</span>
+                        </div>
+                        <div class="card-body">
+                            <p>All schools receive universal support focused on building strong, inclusive, and responsive learning environments.</p>
+                            <ul class="card-list" style="margin-top:.75rem">
+                                <li><i class="fas fa-check" style="color:var(--c-tier1)" aria-hidden="true"></i><span>Access to divisional professional learning opportunities</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier1)" aria-hidden="true"></i><span>Universal resources, tools, and frameworks</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier1)" aria-hidden="true"></i><span>Consultation upon request</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier1)" aria-hidden="true"></i><span>Support for divisional priorities (literacy, numeracy, well-being, Indigenous education)</span></li>
+                                <li><i class="fas fa-check" style="color:var(--c-tier1)" aria-hidden="true"></i><span>Cross-school networking and collaboration</span></li>
+                            </ul>
+                            <p class="card-goal"><strong>Goal:</strong> Proactive capacity building to ensure all students experience a high-quality, equitable learning environment.</p>
+                        </div>
                     </div>
-                    <input type="text" id="searchInput" class="block w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-lg outline-none" placeholder="Search team members...">
-                </div>
-                <div class="mt-6 flex flex-wrap gap-2 justify-center" id="filterButtons">
-                    <!-- Buttons generated by JS -->
-                </div>
-            </div>
 
-            <!-- Team Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="teamGrid">
-                <!-- Cards generated by JS -->
-            </div>
-            
-            <!-- No results message -->
-            <div id="noResults" class="hidden text-center py-12 text-gray-500">
-                <i class="fas fa-search-minus text-4xl mb-4"></i>
-                <p class="text-xl">No team members found matching your search.</p>
-            </div>
-        </div>
-    </section>
+                    <!-- Assignment Rationale -->
+                    <div class="data-card tile-double-width">
+                        <div class="card-header">
+                            <i class="fas fa-balance-scale card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">How Support Is Assigned</span>
+                        </div>
+                        <div class="card-body card-split">
+                            <div class="card-split-text">
+                                <p>Staff are embedded in schools based on equity-informed indicators. Schools with the greatest need receive the most intensive and coordinated support.</p>
+                                <ul class="card-list" style="margin-top:.75rem">
+                                    <li><i class="fas fa-circle" style="font-size:.5rem;margin-top:6px" aria-hidden="true"></i><span>Indigenous student opportunity gaps</span></li>
+                                    <li><i class="fas fa-circle" style="font-size:.5rem;margin-top:6px" aria-hidden="true"></i><span>Attendance and engagement indicators</span></li>
+                                    <li><i class="fas fa-circle" style="font-size:.5rem;margin-top:6px" aria-hidden="true"></i><span>Literacy and numeracy data</span></li>
+                                    <li><i class="fas fa-circle" style="font-size:.5rem;margin-top:6px" aria-hidden="true"></i><span>Students with multiple risk factors</span></li>
+                                    <li><i class="fas fa-circle" style="font-size:.5rem;margin-top:6px" aria-hidden="true"></i><span>Need for sustained relational support</span></li>
+                                </ul>
+                            </div>
+                            <div class="card-split-aside">
+                                <div class="card-stat-block">
+                                    <div class="card-stat-icon"><i class="fas fa-book-open" aria-hidden="true"></i></div>
+                                    <div>
+                                        <p class="card-stat-label">Literacy 2026–2027</p>
+                                        <p class="card-stat-desc">Wave-based model across priority schools identified through data</p>
+                                    </div>
+                                </div>
+                                <div class="card-stat-block">
+                                    <div class="card-stat-icon"><i class="fas fa-calculator" aria-hidden="true"></i></div>
+                                    <div>
+                                        <p class="card-stat-label">Numeracy 2026–2027</p>
+                                        <p class="card-stat-desc">Wave-based model across priority schools identified through data</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="flex justify-center items-center font-bold text-2xl mb-4">
-                <i class="fas fa-graduation-cap mr-3"></i> SCST
+                </div><!-- /.card-grid -->
+            </div><!-- /.content-body -->
+        </section>
+
+
+        <!-- ════════════════════════════════════════
+             SECTION 5 — Looking Ahead
+             ════════════════════════════════════════ -->
+        <section class="section-panel"
+                 id="sec-ahead"
+                 role="tabpanel"
+                 aria-labelledby="tab-4"
+                 tabindex="-1"
+                 hidden>
+            <div class="content-body">
+
+                <div class="section-intro">
+                    <h2>Looking Ahead</h2>
+                    <p>SCST continues to evolve to:</p>
+                </div>
+
+                <div class="card-grid">
+
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-school card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">Increase Embedded Support</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Increase embedded, in-school support.</p>
+                        </div>
+                    </div>
+
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-handshake card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">Strengthen Collaboration</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Strengthen collaboration across teams.</p>
+                        </div>
+                    </div>
+
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-chart-line card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">Refine Data-Informed Decision-Making</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Refine data-informed decision-making.</p>
+                        </div>
+                    </div>
+
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-layer-group card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">Expand Tiered Instructional Models</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Expand impact through tiered instructional models.</p>
+                        </div>
+                    </div>
+
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-star card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">Improve Student Outcomes</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Improve outcomes for students, particularly those experiencing barriers.</p>
+                        </div>
+                    </div>
+
+                    <div class="data-card">
+                        <div class="card-header">
+                            <i class="fas fa-chalkboard-teacher card-header-icon" aria-hidden="true"></i>
+                            <span class="card-title">Specialized Teacher Mentorship</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Specialized Teacher Mentorship (Library, Phys. Ed, Music, Applied Technology, Human Ecology, Student Services, Teachers New To LRSD).</p>
+                        </div>
+                    </div>
+
+                </div><!-- /.card-grid -->
+            </div><!-- /.content-body -->
+        </section>
+
+    </main><!-- /#mainContent -->
+
+    <!-- ── Footer ───────────────────────────────── -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <span>School and Classroom Support Team</span>
             </div>
-            <p class="text-gray-400">School and Classroom Support Team • Louis Riel School Division</p>
-            <p class="text-gray-500 text-sm mt-8">&copy; 2026 LRSD. All rights reserved.</p>
+            <p class="footer-sub">Louis Riel School Division</p>
+            <p class="footer-copy">&copy; 2026 LRSD. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- App Scripts -->
     <script src="app.js"></script>
 </body>
 </html>
